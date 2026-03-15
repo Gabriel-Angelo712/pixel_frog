@@ -118,4 +118,4 @@ O projeto encontra-se em **fase inicial**. Funcionalidades planeadas:
 ---
 
 ## Créditos
-Desenvolvido por **Gabrie João**
+Desenvolvido por **Gabrie Ângelo**
