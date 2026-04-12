@@ -1,6 +1,6 @@
 # Pixel Frog
 
-Um jogo de plataformas 2D em pixel art desenvolvido em **C** com a biblioteca **Raylib**, criado pelo estúdio **Anchor Studios**.
+Um jogo de plataformas 2D em pixel art desenvolvido em **C** com a biblioteca **Raylib**.
 
 ---
 
