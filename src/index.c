@@ -34,11 +34,12 @@ int main(void)
 
     float tile_width = 48.0f;
     float tile_height = 48.0f;
-    Vector2 player_pos = {tile_width + 16, screenHeight - tile_height * 3.65f};
+    Vector2 player_pos = {tile_width + 16, screenHeight - tile_height * 3.28f};
+    float ground_y;
 
     // Fatores de escala
-    const float player_scale = 3.0f;  // personagem
-    const float terrain_scale = 2.0f; // relvado
+    const float player_scale = 2.0f;  // personagem
+    const float terrain_scale = 1.6f; // relvado
     const float button_scale = 2.5f;  // botão de configurações
 
     InitWindow((int)screenWidth, (int)screenHeight, "Anchor_Studios");
@@ -107,7 +108,7 @@ int main(void)
             player_pos.y += velocityY;
             velocityY += gravity;
 
-            float ground_y = screenHeight - tile_height * 3.65f;
+            ground_y = screenHeight - tile_height * 3.28f;
             if (CheckCollisionPointRec(player_pos, (Rectangle){0, ground_y, screenWidth, tile_height}))
             {
                 player_pos.y = ground_y;
