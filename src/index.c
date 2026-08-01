@@ -55,6 +55,7 @@ int main(void)
     Texture2D player_run_left = LoadTexture("../assets/Main_Characters/Ninja_Frog/Run_left.png");
     Texture2D settings_btn = LoadTexture("../assets/Menu/Buttons/Settings.png");
     Texture2D background_sky_1 = LoadTexture("../assets/Background/nature_1/1.png");
+    Texture2D background_clouds_1 = LoadTexture("../assets/Background/nature_1/2.png");
 
     Rectangle frame_rec = {0, 0, (float)player_frames_width, (float)player_frames_height};
 
@@ -166,6 +167,7 @@ int main(void)
         
         //Desenha o background
         DrawTextureEx(background_sky_1, (Vector2){0.0f, 0.0f}, 0.0f, 1.9f,WHITE);
+        DrawTextureEx(background_clouds_1, (Vector2){100.0f, 0.0f}, 0.0f, 1.4f,WHITE);
 
         // Cenário (relvado escalado)
         float tile_real_width = grass_tiles[0].width; // 43
