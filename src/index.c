@@ -39,7 +39,7 @@ int main(void)
 
     // Fatores de escala
     const float player_scale = 2.0f;  // personagem
-    const float terrain_scale = 1.6f; // relvado
+   // const float terrain_scale = 1.6f; // relvado
     const float button_scale = 2.5f;  // botão de configurações
 
     InitWindow((int)screenWidth, (int)screenHeight, "Anchor_Studios");
@@ -60,15 +60,17 @@ int main(void)
     Texture2D background_grass_1  = LoadTexture("../assets/Background/nature_1/5.png");   
     Texture2D background_tree_1  = LoadTexture("../assets/Background/nature_1/6.png"); 
     Texture2D background_tree_2  = LoadTexture("../assets/Background/nature_1/7.png");   
- 
+    Texture2D background_ground_1  = LoadTexture("../assets/Background/nature_1/8.png");   
 
     Rectangle frame_rec = {0, 0, (float)player_frames_width, (float)player_frames_height};
 
     // Retângulos de recorte dos tiles do relvado (tamanhos originais)
+ /*   
     Rectangle grass_tiles[2] = {
         {98, 0, tile_width - 5, tile_height - 1}, // largura 43, altura 47
         {98, 16, tile_width - 5, tile_height}     // largura 43, altura 48
     };
+   */ 
 
     while (!WindowShouldClose())
     {
@@ -177,11 +179,12 @@ int main(void)
         DrawTextureEx(background_grass_1, (Vector2){0.0f, 0.0f}, 0.0f, 2.0f,WHITE);  
         DrawTextureEx(background_tree_1, (Vector2){0.0f, 10.0f}, 0.0f, 1.8f,WHITE);  
         DrawTextureEx(background_tree_2, (Vector2){0.0f, 0.0f}, 0.0f, 1.89f,WHITE);   
+        DrawTextureEx(background_ground_1, (Vector2){0.0f, 10.0f}, 0.0f, 1.87f,WHITE);           
 
         // Cenário (relvado escalado)
-        float tile_real_width = grass_tiles[0].width; // 43
-        float step_x = tile_real_width * terrain_scale;
-
+//        float tile_real_width = grass_tiles[0].width; // 43
+//        float step_x = tile_real_width * terrain_scale;
+/*
         for (float x = 0.0f; x <= screenWidth + step_x; x += step_x)
         {
             // Primeira camada (grama superior) – manter base na mesma linha
@@ -220,7 +223,7 @@ int main(void)
                            (Vector2){0, 0}, 0.0f, WHITE);
         }
 
-
+*/
         // Personagem escalado (mantém pés na posição física)
         Rectangle destRec = {
             player_pos.x,
