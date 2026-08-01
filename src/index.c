@@ -57,14 +57,17 @@ int main(void)
     Texture2D background_sky_1 = LoadTexture("../assets/Background/nature_1/1.png");
     Texture2D background_clouds_1 = LoadTexture("../assets/Background/nature_1/2.png");
     Texture2D background_montains_1 = LoadTexture("../assets/Background/nature_1/3.png");
+    Texture2D background_grass_1  = LoadTexture("../assets/Background/nature_1/5.png");    
 
     Rectangle frame_rec = {0, 0, (float)player_frames_width, (float)player_frames_height};
 
     // Retângulos de recorte dos tiles do relvado (tamanhos originais)
+    
     Rectangle grass_tiles[2] = {
         {98, 0, tile_width - 5, tile_height - 1}, // largura 43, altura 47
         {98, 16, tile_width - 5, tile_height}     // largura 43, altura 48
     };
+    
 
     while (!WindowShouldClose())
     {
@@ -169,7 +172,8 @@ int main(void)
         //Desenha o background
         DrawTextureEx(background_sky_1, (Vector2){0.0f, 0.0f}, 0.0f, 1.9f,WHITE);
         DrawTextureEx(background_clouds_1, (Vector2){100.0f, 0.0f}, 0.0f, 1.4f,WHITE);
-        DrawTextureEx(background_montains_1, (Vector2){0.0f, 0.0f}, 0.0f, 1.87f,WHITE);        
+        DrawTextureEx(background_montains_1, (Vector2){0.0f, 0.0f}, 0.0f, 1.87f,WHITE);
+        DrawTextureEx(background_grass_1, (Vector2){0.0f, 0.0f}, 0.0f, 2.0f,WHITE);        
 
         // Cenário (relvado escalado)
         float tile_real_width = grass_tiles[0].width; // 43
@@ -212,6 +216,7 @@ int main(void)
                                        h1 * terrain_scale},
                            (Vector2){0, 0}, 0.0f, WHITE);
         }
+
 
         // Personagem escalado (mantém pés na posição física)
         Rectangle destRec = {
