@@ -54,6 +54,7 @@ int main(void)
     Texture2D player_run_right = LoadTexture("../assets/Main_Characters/Ninja_Frog/Run.png");
     Texture2D player_run_left = LoadTexture("../assets/Main_Characters/Ninja_Frog/Run_left.png");
     Texture2D settings_btn = LoadTexture("../assets/Menu/Buttons/Settings.png");
+    Texture2D background_sky_1 = LoadTexture("../assets/Background/nature_1/1.png");
 
     Rectangle frame_rec = {0, 0, (float)player_frames_width, (float)player_frames_height};
 
@@ -100,7 +101,7 @@ int main(void)
         }
 
         // ----- PULO -----
-        if (IsKeyPressed(KEY_SPACE) && !is_jumping)
+        if ((IsKeyPressed(KEY_SPACE) || IsKeyPressed(KEY_UP)) && !is_jumping)
         {
             is_jumping = true;
             velocityY = jump_speed;
@@ -162,6 +163,9 @@ int main(void)
 
         // Botão de configurações (escalado)
         DrawTextureEx(settings_btn, (Vector2){32.0f, 32.0f}, 0.0f, button_scale, WHITE);
+        
+        //Desenha o background
+        DrawTextureEx(background_sky_1, (Vector2){0.0f, 0.0f}, 0.0f, 1.9f,WHITE);
 
         // Cenário (relvado escalado)
         float tile_real_width = grass_tiles[0].width; // 43
