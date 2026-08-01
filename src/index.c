@@ -77,6 +77,10 @@ int main(void)
             velocityX = run_speed;
             facing_left = false;
             is_left_last_pos = facing_left;
+            
+            if(CheckCollisionPointRec(player_pos, (Rectangle){screenWidth - 150.0f, 0.0f, 10.0f, screenHeight})){
+                player_pos.x = screenWidth - 150.0f;
+            } 
         }
         else if (move_left && !move_right)
         {
@@ -84,6 +88,10 @@ int main(void)
             velocityX = -run_speed;
             facing_left = true;
             is_left_last_pos = facing_left;
+            
+            if(CheckCollisionPointRec(player_pos, (Rectangle){0.0f, 0.0f, 10.0f, screenHeight})){
+                player_pos.x = 10.0f;
+            }
         }
         else
         {
